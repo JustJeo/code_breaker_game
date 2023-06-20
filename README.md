@@ -11,6 +11,11 @@ In the most vanilla version of the game, players will have 10 attempts to guess 
 
 There will be arrows on the top and bottom of the guessed number that players will have to click in order to change the digit for that column. Since I am going for a Code Breaker game that represents a padlock, players will not be able to key-in their guess and must "rotate" the column to their expected guess.
 
+Clues for the answer to the code will come as colored indicators.
+- Green = That is the correct number in the correct spot.
+- Yellow = That is the correct number in the wrong spot.
+- Red = That number does not appear anywhere in the code.
+
 ## Future Development
 In the future, after the vanilla version of the game is released, I do plan on adding extra game modes.
 - Easy Mode (2-3 digit secret code)
