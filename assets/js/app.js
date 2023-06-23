@@ -21,12 +21,17 @@ let game = {
 
     // Uses random number fx to generate secret code for game.
     getSecretCode: function() {
+        // Generates Code
         document.getElementById("code-slot-1").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-2").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-3").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-4").innerHTML = game.getRandomNumber();
+        
         document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
     },
+
+    // Player submits a guess
+
     
     // Place player code into player array
 
@@ -53,9 +58,12 @@ let game = {
     }
 }
 
-// Listens for click on "Secret Code" btn
+// Listens for click on "Random Code" btn
 start_btn.addEventListener("click", () => {
     game.getSecretCode();
+    // Hides Start btn and shows Submit btn
+    document.getElementById("random-code-btn").style.display = "none";
+    document.getElementById("player-guess-btn").style.display = "block";
 });
 
 // Display "Play Again" btn when game is finsihed

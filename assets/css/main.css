@@ -40,7 +40,10 @@ button {
     margin: auto;    
 }
 
-
+/* Player Zone */
+#player-guess-btn {
+    margin: auto;  
+}
 
 /* Secret Code */
 #secret-code-container .secret_code_number {
