@@ -27,15 +27,20 @@ p {
     text-align: center;
 }
 
-/* Start btn */
-#random-code-btn {
-    display: block;
-    margin: auto;
+button {
     padding: 5px 8px;
     font-size: 18px;
     background-color: black;
     color: greenyellow;
 }
+
+/* Start btn */
+#random-code-btn {
+    display: block;
+    margin: auto;    
+}
+
+
 
 /* Secret Code */
 #secret-code-container .secret_code_number {
