@@ -26,3 +26,8 @@ p {
 .text-center {
     text-align: center;
 }
+
+/* Secret Code */
+#secret-code-container .secret_code_number {
+    display: inline;
+}
