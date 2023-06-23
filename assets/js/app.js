@@ -7,44 +7,56 @@ let player_guess = 10;
 // Start Btn
 let start_btn = document.getElementById("random-code-btn");
 
+// Game Logic!
+let game = {
+    // Empty Declerations
+    secretCode: [],
+    playerCode: [],
+    // Place secret code into secret array
 
-// Listens for click on "Secret Code" btn
-start_btn.addEventListener("click", getSecretCode);
+    // Randomly grabs one number
+    getRandomNumber: function() {
+        return Math.floor(Math.random()*10);
+    },
 
-// Randomly grabs one number
-function getRandomNumber() {
-    return Math.floor(Math.random()*10);
-}
+    // Uses random number fx to generate secret code for game.
+    getSecretCode: function() {
+        document.getElementById("code1").innerHTML = getRandomNumber();
+        document.getElementById("code2").innerHTML = getRandomNumber();
+        document.getElementById("code3").innerHTML = getRandomNumber();
+        document.getElementById("code4").innerHTML = getRandomNumber();
+        document.getElementById("player-guess-text").innerHTML = getGuessAmount();
+    },
+    
+    // Place player code into player array
 
-// Uses random number fx to generate secret code for game.
-function getSecretCode() {
-    document.getElementById("code1").innerHTML = getRandomNumber();
-    document.getElementById("code2").innerHTML = getRandomNumber();
-    document.getElementById("code3").innerHTML = getRandomNumber();
-    document.getElementById("code4").innerHTML = getRandomNumber();
-    document.getElementById("player-guess-text").innerHTML = getGuessAmount();
-}
 
-// Place secret code into secret array
 
-// Place player code into player array
 
-// Check player code to secret code
+    // Check player code to secret code
 
-// If player code == secret code, then player wins
+    // If player code == secret code, then player wins
 
-// if player code != secret code, then -1 player guess and player gets to guess again
+    // if player code != secret code, then -1 player guess and player gets to guess again
 
-// if player guess == 0, then game is over
-function getGuessAmount() {
-    if(player_guess == 1) {
-        return document.getElementById("player-guess-text").innerHTML = "Game Over";
-    } else if(player_guess == 2) {
-        player_guess --;
-        return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
-    } else {
-        player_guess --;
-        console.log(player_guess);
-        return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
+    // if player guess == 0, then game is over
+    getGuessAmount: function() {
+        if(player_guess == 1) {
+            return document.getElementById("player-guess-text").innerHTML = "Game Over";
+        } else if(player_guess == 2) {
+            player_guess --;
+            return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
+        } else {
+            player_guess --;
+            console.log(player_guess);
+            return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
+        }
     }
 }
+
+// Listens for click on "Secret Code" btn
+start_btn.addEventListener("click", () => {
+    game.getSecretCode();
+});
+
+// Display "Play Again" btn when game is finsihed
