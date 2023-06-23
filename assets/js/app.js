@@ -22,7 +22,7 @@ let game = {
     // Uses random number fx to generate secret code for game.
     getSecretCode: function() {
         document.getElementById("code-slot-1").innerHTML = game.getRandomNumber();
-        document.getElementById("codeslot-2").innerHTML = game.getRandomNumber();
+        document.getElementById("code-slot-2").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-3").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-4").innerHTML = game.getRandomNumber();
         document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
@@ -37,12 +37,11 @@ let game = {
 
     // If player code == secret code, then player wins
 
-    // if player code != secret code, then -1 player guess and player gets to guess again
-
-    // if player guess == 0, then game is over
     getGuessAmount: function() {
+        // if player guess == 0, then game is over
         if(player_guess == 1) {
             return document.getElementById("player-guess-text").innerHTML = "Game Over";
+        // if player code != secret code, then -1 player guess and player gets to guess again
         } else if(player_guess == 2) {
             player_guess --;
             return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
