@@ -22,6 +22,7 @@ function getSecretCode() {
     document.getElementById("code2").innerHTML = getRandomNumber();
     document.getElementById("code3").innerHTML = getRandomNumber();
     document.getElementById("code4").innerHTML = getRandomNumber();
+    document.getElementById("player-guess-text").innerHTML = getGuessAmount();
 }
 
 // Place secret code into secret array
@@ -37,9 +38,10 @@ function getSecretCode() {
 // if player guess == 0, then game is over
 function getGuessAmount() {
     if(player_guess == 0) {
-        return "Game Over";
-    } else {
+        document.getElementById("player-guess-text").innerHTML = "Game Over";
+    } else if(player_guess > 0) {
         player_guess --;
-        return player_guess + "guesses left";
+        console.log(player_guess);
+        document.getElementById("player-guess-text").innerHTML = `${player_guess}`;
     }
 }
