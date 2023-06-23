@@ -21,11 +21,11 @@ let game = {
 
     // Uses random number fx to generate secret code for game.
     getSecretCode: function() {
-        document.getElementById("code1").innerHTML = getRandomNumber();
-        document.getElementById("code2").innerHTML = getRandomNumber();
-        document.getElementById("code3").innerHTML = getRandomNumber();
-        document.getElementById("code4").innerHTML = getRandomNumber();
-        document.getElementById("player-guess-text").innerHTML = getGuessAmount();
+        document.getElementById("code1").innerHTML = game.getRandomNumber();
+        document.getElementById("code2").innerHTML = game.getRandomNumber();
+        document.getElementById("code3").innerHTML = game.getRandomNumber();
+        document.getElementById("code4").innerHTML = game.getRandomNumber();
+        document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
     },
     
     // Place player code into player array
