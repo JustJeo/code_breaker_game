@@ -27,6 +27,12 @@ p {
     text-align: center;
 }
 
+/* Start btn */
+#random-code-btn {
+    display: block;
+    margin: auto;
+}
+
 /* Secret Code */
 #secret-code-container .secret_code_number {
     display: inline;

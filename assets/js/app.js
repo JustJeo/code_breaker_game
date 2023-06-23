@@ -37,8 +37,11 @@ function getSecretCode() {
 
 // if player guess == 0, then game is over
 function getGuessAmount() {
-    if(player_guess == 0) {
+    if(player_guess == 1) {
         return document.getElementById("player-guess-text").innerHTML = "Game Over";
+    } else if(player_guess == 2) {
+        player_guess --;
+        return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
     } else {
         player_guess --;
         console.log(player_guess);
