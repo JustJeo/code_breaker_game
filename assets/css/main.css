@@ -38,6 +38,10 @@ button {
     color: greenyellow;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* Opening Text */
 #game-desc {
     text-align: center;
