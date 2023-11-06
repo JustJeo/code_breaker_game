@@ -1,4 +1,8 @@
 /* ~~~~~~~~~~ General ~~~~~~~~~~ */
+* {
+    font-family: 'Playpen Sans', cursive;
+}
+
 h1 {
     font-size: 72px;
 }
