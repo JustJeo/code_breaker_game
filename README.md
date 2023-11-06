@@ -16,6 +16,12 @@ Clues for the answer to the code will come as colored indicators.
 - Yellow = That is the correct number in the wrong spot.
 - Red = That number does not appear anywhere in the code.
 
+## Technologies Used
+For this Passion Project, I plan on only using HTML, CSS, and Vanilla JavaScript. I wanted to go back to my coding bootcamp days where the very first project was a game that could only be created with the 3 listed technologies. I always believed that I could do more with my first project if I had more time, so I wanted to try it again, but this time with no deadline.
+- HTML 5
+- CSS 3
+- Vanilla JavaScript
+
 ## Future Development
 In the future, after the vanilla version of the game is released, I do plan on adding extra game modes.
 - Easy Mode (2-3 digit secret code)
