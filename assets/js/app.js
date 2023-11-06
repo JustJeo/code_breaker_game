@@ -7,6 +7,15 @@ let player_guess = 10;
 // Start Btn
 let start_btn = document.getElementById("random-code-btn");
 
+// Listens for click on "Random Code" btn
+start_btn.addEventListener("click", () => {
+    game.getSecretCode();
+    // Hides Start btn
+    document.getElementById("random-code-btn").style.display = "none";
+    // Shows Submit btn
+    document.getElementById("player-guess-btn").style.display = "block";
+});
+
 // Game Logic!
 let game = {
     // Empty Declerations
@@ -40,6 +49,8 @@ let game = {
 
     // Check player code to secret code
 
+
+
     // If player code == secret code, then player wins
 
     getGuessAmount: function() {
@@ -55,15 +66,13 @@ let game = {
             console.log(player_guess);
             return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
         }
+    },
+
+    // RESET FX
+    // If player code != secret code, empty out player code
+    resetPlayer: function() {
+        game.playerCode = [];
     }
 }
-
-// Listens for click on "Random Code" btn
-start_btn.addEventListener("click", () => {
-    game.getSecretCode();
-    // Hides Start btn and shows Submit btn
-    document.getElementById("random-code-btn").style.display = "none";
-    document.getElementById("player-guess-btn").style.display = "block";
-});
 
 // Display "Play Again" btn when game is finsihed

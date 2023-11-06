@@ -55,6 +55,7 @@ button:hover {
 
 /* Player Zone */
 #player-guess-btn {
+    display: none;
     margin: 15px auto;  
 }
 
