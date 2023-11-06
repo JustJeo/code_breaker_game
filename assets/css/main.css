@@ -53,6 +53,11 @@ button:hover {
     margin: auto;    
 }
 
+/* Attempts Text */
+#player-guess-text {
+    display: none;
+}
+
 /* Player Zone */
 #player-guess-btn {
     display: none;
