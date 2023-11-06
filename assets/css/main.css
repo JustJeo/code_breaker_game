@@ -34,6 +34,11 @@ button {
     color: greenyellow;
 }
 
+/* Opening Text */
+#game-desc {
+    text-align: center;
+}
+
 /* Start btn */
 #random-code-btn {
     display: block;
@@ -42,7 +47,7 @@ button {
 
 /* Player Zone */
 #player-guess-btn {
-    margin: auto;  
+    margin: 15px auto;  
 }
 
 /* Secret Code */
