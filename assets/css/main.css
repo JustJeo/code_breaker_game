@@ -3,6 +3,10 @@
     font-family: 'Playpen Sans', cursive;
 }
 
+body {
+    padding: 1em 5em;
+}
+
 h1 {
     font-size: 5em;
 }

@@ -1,0 +1,90 @@
+/* ~~~~~~~~~~~~~~~~~~~  Large Laptop ~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width: 1400px) and (max-width: 1599px) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */
+    body {
+        padding: 1em 4em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Generic Laptop ~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */
+    body {
+        padding: 1em 4em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Smallest Laptop ~~~~~~~~~~~~~~~~~~~ */
+@media (min-width: 1025px) and (max-width: 1199px) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */ 
+    body {
+        padding: 1em 3em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Tablet: Landscape ~~~~~~~~~~~~~~~~~~~ */
+@media screen 
+	and (min-width: 768px)
+	and (max-width: 1024px)
+	and (orientation: landscape) {
+	/* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */
+    body {
+        padding: 1em 2em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Tablet: Portrait ~~~~~~~~~~~~~~~~~~~ */
+@media only screen
+	and (min-width: 481px)
+	and (max-width: 768px)
+	and (orientation: portrait) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */	
+    body {
+        padding: 1em 2em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Cell Phone: Landscape ~~~~~~~~~~~~~~~~~~~  */
+@media only screen
+	and (max-height: 481px)
+	and (max-width: 964px)
+	and (orientation: landscape) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */
+    body {
+        padding: 1em;
+    }
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~  Cell Phone: Portrait ~~~~~~~~~~~~~~~~~~~  */
+@media only screen
+	and (max-width: 480px) 
+	and (orientation: portrait) {
+    /* ~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~ */
+    body {
+        padding: 1em;
+    }
+}
