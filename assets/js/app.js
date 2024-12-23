@@ -16,11 +16,25 @@ start_btn.addEventListener("click", () => {
     document.getElementById("player-guess-btn").style.display = "block";
 });
 
-// Game Logic!
+// ~~~~~~~~~~ Game Logic! ~~~~~~~~~~
 let game = {
     // Empty Declerations
     secretCode: [],
     playerCode: [],
+
+    // Get number of Guesses
+    getGuessAmount: function() {
+        // if player guess == 0, then game is over
+        if(player_guess == 1) {
+            return document.getElementById("player-guess-text").innerHTML = "Game Over";
+        // if player code != secret code, then -1 player guess and player gets to guess again
+        } else if(player_guess == 2) {
+            return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
+        } else {
+            console.log(player_guess);
+            return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
+        }
+    },
     
     // RANDOM NUMBER FX
     // Randomly grabs ONE number
@@ -60,19 +74,9 @@ let game = {
 
     
     // GUESS AMOUNT FX
-    getGuessAmount: function() {
-        // if player guess == 0, then game is over
-        if(player_guess == 1) {
-            return document.getElementById("player-guess-text").innerHTML = "Game Over";
-        // if player code != secret code, then -1 player guess and player gets to guess again
-        } else if(player_guess == 2) {
-            player_guess --;
-            return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
-        } else {
-            player_guess --;
-            console.log(player_guess);
-            return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
-        }
+    // If player code != secret code, minus one from total attempts left
+    subtractGuessAmount: function() {
+        player_guess --;
     },
 
     // RESET PLAYER INPUT FX
