@@ -22,6 +22,7 @@ let game = {
     secretCode: [],
     playerCode: [],
 
+    // GET GUESS ATTEMPTS REMAINING
     // Get number of Guesses
     getGuessAmount: function() {
         // if player guess == 0, then game is over
@@ -58,22 +59,22 @@ let game = {
         document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
     },
 
-    
+    // PLAYER CODE GUESS
     // Place player code into player array
 
 
     // PLAYER GUESS SUBMIT FX
     // Player submits a guess
 
-
+    // PLAYER CODE CHECK
     // Check player code to secret code
 
 
-
+    // PLAYER CODE WIN
     // If player code == secret code, then player wins
 
     
-    // GUESS AMOUNT FX
+    // GUESS AMOUNT SUBTRACTION FX
     // If player code != secret code, minus one from total attempts left
     subtractGuessAmount: function() {
         player_guess --;
