@@ -26,10 +26,11 @@ let game = {
     // Get number of Guesses
     getGuessAmount: function() {
         // if player guess == 0, then game is over
-        if(player_guess == 1) {
+        if(player_guess == 0) {
+            document.getElementById("player-guess-btn").style.display = "none";
             return document.getElementById("player-guess-text").innerHTML = "Game Over";
         // if player code != secret code, then -1 player guess and player gets to guess again
-        } else if(player_guess == 2) {
+        } else if(player_guess == 1) {
             return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
         } else {
             console.log(player_guess);
