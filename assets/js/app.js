@@ -55,12 +55,13 @@ let game = {
         
         // Shows Attempt counter
         document.getElementById("player-guess-text").style.display = "block";
-        // Sets Guess Amount
+        // Gets Guess Amount
         document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
     },
 
     // PLAYER CODE GUESS
     // Place player code into player array
+    
 
 
     // PLAYER GUESS SUBMIT FX
@@ -68,7 +69,17 @@ let game = {
 
     // PLAYER CODE CHECK
     // Check player code to secret code
-
+    codeCheck: function() {
+        if(game.playerCode.toString() === game.secretCode.toString()) {
+            console.log("Wrong. Try again.");
+            game.subtractGuessAmount();
+            document.querySelector("#player-guess-text").innerHTML = game.getGuessAmount();
+        } else {
+            console.log("Wrong. Try again.");
+            game.subtractGuessAmount();
+            document.querySelector("#player-guess-text").innerHTML = game.getGuessAmount();
+        }
+    },
 
     // PLAYER CODE WIN
     // If player code == secret code, then player wins
@@ -86,5 +97,7 @@ let game = {
         game.playerCode = [];
     }
 }
+
+document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
 
 // Display "Play Again" btn when game is finsihed
