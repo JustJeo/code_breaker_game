@@ -7,7 +7,13 @@ let player_attempts = 10;
 // Start Btn
 let start_btn = document.getElementById("random-code-btn");
 
-// Listens for click on "Random Code" btn
+// Generate Secret Code
+let secret_code = [Math.floor(Math.random()*10000)];
+
+// Set Empty Player Code Array
+let player_code = [];
+
+// Listens for game starting click on "Random Code" btn
 start_btn.addEventListener("click", () => {
     game.getSecretCode();
     // Hides Start btn
@@ -18,10 +24,6 @@ start_btn.addEventListener("click", () => {
 
 // ~~~~~~~~~~ Game Logic! ~~~~~~~~~~
 let game = {
-    // Empty Declerations
-    secretCode: [],
-    playerCode: [],
-
     // GET GUESS ATTEMPTS REMAINING
     // Get number of Guesses
     getGuessAmount: function() {
@@ -111,6 +113,8 @@ document.getElementById("player-guess-btn").addEventListener("click", game.codeC
 
 // TEMPORARY FEEDBACK FX
 // Display player guess after code submission to verify that the right numbers are being captured by the game
-document.getElementById("player-guess-display").innerHTML = `Player Submission: ${playerCode} `;
+document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
+
+console.log(secret_code);
 
 // Display "Play Again" btn when game is finsihed
