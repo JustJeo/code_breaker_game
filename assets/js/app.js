@@ -15,7 +15,6 @@ let player_code = [];
 
 // Listens for game starting click on "Random Code" btn
 start_btn.addEventListener("click", () => {
-    game.getSecretCode();
     // Hides Start btn
     document.getElementById("random-code-btn").style.display = "none";
     // Shows Attempt counter
@@ -65,7 +64,7 @@ let game = {
     // PLAYER CODE CHECK
     // Check player code to secret code
     codeCheck: function() {
-        if(game.playerCode.toString() === game.secretCode.toString()) {
+        if(game.player_code === game.secret_code) {
             console.log("Wrong. Try again.");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
