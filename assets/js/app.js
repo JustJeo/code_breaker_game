@@ -18,6 +18,10 @@ start_btn.addEventListener("click", () => {
     game.getSecretCode();
     // Hides Start btn
     document.getElementById("random-code-btn").style.display = "none";
+    // Shows Attempt counter
+    document.getElementById("player-attempts-text").style.display = "block";
+    // Gets Guess Amount
+    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     // Shows Player Input
     document.getElementById("player-guess-input").style.display = "block";
     // Shows Submit btn
@@ -58,10 +62,6 @@ let game = {
         document.getElementById("code-slot-4").innerHTML = game.getRandomNumber();
         
         // Temporarily places display changes here since this is technically the start of the game.
-        // Shows Attempt counter
-        document.getElementById("player-attempts-text").style.display = "block";
-        // Gets Guess Amount
-        document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     },
 
     // SECRET CODE FX
