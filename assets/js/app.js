@@ -53,6 +53,7 @@ let game = {
         document.getElementById("code-slot-3").innerHTML = game.getRandomNumber();
         document.getElementById("code-slot-4").innerHTML = game.getRandomNumber();
         
+        // Temporarily places display changes here since this is technically the start of the game.
         // Shows Attempt counter
         document.getElementById("player-guess-text").style.display = "block";
         // Gets Guess Amount

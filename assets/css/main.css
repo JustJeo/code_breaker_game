@@ -4,7 +4,7 @@
 }
 
 body {
-    padding: 1em 5em;
+    padding: 1em 5em 10em;
 }
 
 h1 {
@@ -63,6 +63,10 @@ button:hover {
 }
 
 /* Player Zone */
+#player-guess-input {
+    margin: 10px auto;
+}
+
 #player-guess-btn {
     display: none;
     margin: 15px auto;  
