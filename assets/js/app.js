@@ -45,24 +45,6 @@ let game = {
             return document.getElementById("player-attempts-text").innerHTML = `${player_attempts} Attempts`;
         }
     },
-    
-    // GET RANDOM NUMBER
-    // Randomly grabs ONE number for secret code
-    getRandomNumber: function() {
-        return Math.floor(Math.random()*10);
-    },
-
-    // GET SECRET CODE
-    // Uses getRandomNumber fx to generate secret code for game.
-    getSecretCode: function() {
-        // Generates Code
-        document.getElementById("code-slot-1").innerHTML = game.getRandomNumber();
-        document.getElementById("code-slot-2").innerHTML = game.getRandomNumber();
-        document.getElementById("code-slot-3").innerHTML = game.getRandomNumber();
-        document.getElementById("code-slot-4").innerHTML = game.getRandomNumber();
-        
-        // Temporarily places display changes here since this is technically the start of the game.
-    },
 
     // SECRET CODE FX
     // Place secret code into secret array
