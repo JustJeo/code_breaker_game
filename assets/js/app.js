@@ -18,6 +18,8 @@ start_btn.addEventListener("click", () => {
     game.getSecretCode();
     // Hides Start btn
     document.getElementById("random-code-btn").style.display = "none";
+    // Shows Player Input
+    document.getElementById("player-guess-input").style.display = "block";
     // Shows Submit btn
     document.getElementById("player-guess-btn").style.display = "block";
 });
