@@ -2,7 +2,7 @@ console.log("AYO! This is Jeo!");
 
 // ~~~~~~~~~~ Initial Load Declarations ~~~~~~~~~~
 // Player Guess
-let player_guess = 10;
+let player_attempts = 10;
 
 // Start Btn
 let start_btn = document.getElementById("random-code-btn");
@@ -26,15 +26,15 @@ let game = {
     // Get number of Guesses
     getGuessAmount: function() {
         // if player guess == 0, then game is over
-        if(player_guess == 0) {
+        if(player_attempts == 0) {
             document.getElementById("player-guess-btn").style.display = "none";
-            return document.getElementById("player-guess-text").innerHTML = "Game Over";
+            return document.getElementById("player-attempts-text").innerHTML = "Game Over";
         // if player code != secret code, then -1 player guess and player gets to guess again
-        } else if(player_guess == 1) {
-            return document.getElementById("player-guess-text").innerHTML = "Last Attempt!";
+        } else if(player_attempts == 1) {
+            return document.getElementById("player-attempts-text").innerHTML = "Last Attempt!";
         } else {
-            console.log(player_guess);
-            return document.getElementById("player-guess-text").innerHTML = `${player_guess} Attempts`;
+            console.log(player_attempts);
+            return document.getElementById("player-attempts-text").innerHTML = `${player_attempts} Attempts`;
         }
     },
     
@@ -55,33 +55,38 @@ let game = {
         
         // Temporarily places display changes here since this is technically the start of the game.
         // Shows Attempt counter
-        document.getElementById("player-guess-text").style.display = "block";
+        document.getElementById("player-attempts-text").style.display = "block";
         // Gets Guess Amount
-        document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
+        document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     },
 
     // SECRET CODE FX
     // Place secret code into secret array
 
-    // PLAYER CODE GUESS
-    // Place player code into player array
-    
-
-
     // PLAYER GUESS SUBMIT FX
     // Player submits a guess
-
+    // Guess will be a PUSH to add most recent guess to the END of an array
+    // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
+    
+    // PLAYER CODE GUESS
+    // Place player code into player array
+    playerCodeGuess: function(event) {
+        const playerSubmission = [];
+        event.target.id === "player-guess-btn";
+        game.playerCode.push(playerSubmission);
+    },
+    
     // PLAYER CODE CHECK
     // Check player code to secret code
     codeCheck: function() {
         if(game.playerCode.toString() === game.secretCode.toString()) {
             console.log("Wrong. Try again.");
             game.subtractGuessAmount();
-            document.querySelector("#player-guess-text").innerHTML = game.getGuessAmount();
+            document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
         } else {
             console.log("Wrong. Try again.");
             game.subtractGuessAmount();
-            document.querySelector("#player-guess-text").innerHTML = game.getGuessAmount();
+            document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
         }
     },
 
@@ -92,7 +97,7 @@ let game = {
     // GUESS AMOUNT SUBTRACTION FX
     // If player code != secret code, minus one from total attempts left
     subtractGuessAmount: function() {
-        player_guess --;
+        player_attempts --;
     },
 
     // RESET PLAYER INPUT FX
@@ -103,5 +108,9 @@ let game = {
 }
 
 document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
+
+// TEMPORARY FEEDBACK FX
+// Display player guess after code submission to verify that the right numbers are being captured by the game
+document.getElementById("player-guess-display").innerHTML = `Player Submission: ${playerCode} `;
 
 // Display "Play Again" btn when game is finsihed
