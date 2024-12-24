@@ -98,7 +98,8 @@ document.getElementById("player-guess-btn").addEventListener("click", game.codeC
 // Display player guess after code submission to verify that the right numbers are being captured by the game
 document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
 
-console.log(secret_code);
+console.log("Official Code:", secret_code);
+console.log("Player Code:");
 
 // Display official secret code to ensure that it matches with console.log code
 document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
