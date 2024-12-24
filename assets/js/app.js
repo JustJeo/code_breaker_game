@@ -38,15 +38,14 @@ let game = {
         }
     },
     
-    // RANDOM NUMBER FX
-    // Randomly grabs ONE number
+    // GET RANDOM NUMBER
+    // Randomly grabs ONE number for secret code
     getRandomNumber: function() {
         return Math.floor(Math.random()*10);
     },
 
-    // SECRET CODE FX
-    // Place secret code into secret array
-    // Uses random number fx to generate secret code for game.
+    // GET SECRET CODE
+    // Uses getRandomNumber fx to generate secret code for game.
     getSecretCode: function() {
         // Generates Code
         document.getElementById("code-slot-1").innerHTML = game.getRandomNumber();
@@ -59,6 +58,9 @@ let game = {
         // Gets Guess Amount
         document.getElementById("player-guess-text").innerHTML = game.getGuessAmount();
     },
+
+    // SECRET CODE FX
+    // Place secret code into secret array
 
     // PLAYER CODE GUESS
     // Place player code into player array
