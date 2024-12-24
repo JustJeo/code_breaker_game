@@ -119,4 +119,7 @@ document.getElementById("player-guess-display").innerHTML = `Player Submission: 
 
 console.log(secret_code);
 
+// Display official secret code to ensure that it matches with console.log code
+document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
+
 // Display "Play Again" btn when game is finsihed
