@@ -14,7 +14,8 @@ let player_attempts = 10;
 let start_btn = document.getElementById("random-code-btn");
 
 // Generate Secret Code
-let secret_code = [Math.floor(Math.random()*10000)];
+let secret_code = [];
+secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
 
 // Set Empty Player Code Array
 let player_code = [];
