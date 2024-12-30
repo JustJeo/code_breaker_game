@@ -1,5 +1,11 @@
 console.log("AYO! This is Jeo!");
 
+// ~~~~~~~~~~ Dark Mode FX ~~~~~~~~~~
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+};
+
 // ~~~~~~~~~~ Initial Load Declarations ~~~~~~~~~~
 // Player Guess
 let player_attempts = 10;
