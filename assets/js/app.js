@@ -8,7 +8,7 @@ function darkMode() {
 
 // ~~~~~~~~~~ Initial Load Declarations ~~~~~~~~~~
 // Player Guess
-let player_attempts = 10;
+let player_attempts = 3;
 
 // Start Btn
 let start_btn = document.getElementById("random-code-btn");
@@ -41,14 +41,16 @@ let game = {
     getGuessAmount: function() {
         // if player guess == 0, then game is over
         if(player_attempts == 0) {
+            console.log('Game Over.');
             document.getElementById("player-guess-btn").style.display = "none";
             document.getElementById("play-again-btn").style.display = "block";
             return document.getElementById("player-attempts-text").innerHTML = "Game Over";
         // if player code != secret code, then -1 player guess and player gets to guess again
         } else if(player_attempts == 1) {
+            console.log('Last Attempt!');
             return document.getElementById("player-attempts-text").innerHTML = "Last Attempt!";
         } else {
-            console.log(player_attempts);
+            console.log(player_attempts + ' Attempts left');
             return document.getElementById("player-attempts-text").innerHTML = `${player_attempts} Attempts`;
         }
     },
@@ -73,11 +75,11 @@ let game = {
     // Check player code to secret code
     codeCheck: function() {
         if(game.player_code === game.secret_code) {
-            console.log("Wrong. Try again.");
+            //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
         } else {
-            console.log("Wrong. Try again.");
+            //console.log("Wrong. Try again.");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
         }
@@ -100,7 +102,9 @@ let game = {
     },
 
     gameReset: function() {
-        player_attempts = 10;
+        player_attempts = 3;
+        game.secret_code = [];
+        //secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
     }
 }
 
@@ -123,4 +127,5 @@ playAgain.addEventListener("click", () => {
     document.getElementById("play-again-btn").style.display = "none";
     document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     game.gameReset();
+    console.log(secret_code);
 })
