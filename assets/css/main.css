@@ -5,6 +5,8 @@
 
 body {
     padding: 1em 5em 10em;
+    background-color: gray;
+    color: white;
 }
 
 h1 {
@@ -37,6 +39,11 @@ p {
 
 .text-right {
     text-align: right;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
 }
 
 .dark-mode {

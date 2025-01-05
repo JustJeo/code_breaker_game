@@ -1,5 +1,11 @@
 console.log("AYO! This is Jeo!");
 
+// ~~~~~~~~~~ Light Mode FX ~~~~~~~~~~
+function lightMode() {
+    var element = document.body;
+    element.classList.toggle("light-mode");
+};
+
 // ~~~~~~~~~~ Dark Mode FX ~~~~~~~~~~
 function darkMode() {
     var element = document.body;
