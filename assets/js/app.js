@@ -97,6 +97,10 @@ let game = {
     // If player code != secret code, empty out player code
     resetPlayer: function() {
         game.playerCode = [];
+    },
+
+    gameReset: function() {
+        player_attempts = 10;
     }
 }
 
@@ -117,4 +121,6 @@ const playAgain = document.getElementById("play-again-btn");
 playAgain.addEventListener("click", () => {
     document.getElementById("player-guess-btn").style.display = "block";
     document.getElementById("play-again-btn").style.display = "none";
+    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
+    game.gameReset();
 })
