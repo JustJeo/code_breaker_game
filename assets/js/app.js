@@ -113,3 +113,8 @@ console.log("Player Code:");
 document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
 
 // Display "Play Again" btn when game is finsihed
+const playAgain = document.getElementById("play-again-btn");
+playAgain.addEventListener("click", () => {
+    document.getElementById("player-guess-btn").style.display = "block";
+    document.getElementById("play-again-btn").style.display = "none";
+})
