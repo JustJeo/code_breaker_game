@@ -118,8 +118,12 @@ let game = {
         // Resets number of player attempts available
         player_attempts = 3;
         // Empties out secret code
-        game.secret_code = [];
-        //secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+        secret_code = [];
+        // Generates new random code
+        secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+        // Updates "Official Code" on feedback section
+        // Delete this before official 1.0 ver. For feedback while making game only
+        document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
     }
 }
 
