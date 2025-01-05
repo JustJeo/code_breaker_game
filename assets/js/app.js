@@ -39,16 +39,17 @@ let game = {
     // GET GUESS ATTEMPTS REMAINING
     // Get number of Guesses
     getGuessAmount: function() {
-        // if player guess == 0, then game is over
+        // If player attempts == 0, then game is over
         if(player_attempts == 0) {
             console.log('Game Over.');
             document.getElementById("player-guess-btn").style.display = "none";
             document.getElementById("play-again-btn").style.display = "block";
             return document.getElementById("player-attempts-text").innerHTML = "Game Over";
-        // if player code != secret code, then -1 player guess and player gets to guess again
+        // If player is on last attempt, update text to display this
         } else if(player_attempts == 1) {
             console.log('Last Attempt!');
             return document.getElementById("player-attempts-text").innerHTML = "Last Attempt!";
+        // If player code != secret code, then -1 player attempts and player gets to guess again
         } else {
             console.log(player_attempts + ' Attempts left');
             return document.getElementById("player-attempts-text").innerHTML = `${player_attempts} Attempts`;
@@ -74,13 +75,17 @@ let game = {
     // PLAYER CODE CHECK
     // Check player code to secret code
     codeCheck: function() {
+        // If player guesses the correct secret code
         if(game.player_code === game.secret_code) {
             //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
+        // Else, the player's guess doesn't match the secret code
         } else {
             //console.log("Wrong. Try again.");
+            // Subtracts 1 from the current guess amount
             game.subtractGuessAmount();
+            // Updates text on page of how many guesses are left for the player
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
         }
     },
@@ -101,8 +106,12 @@ let game = {
         game.playerCode = [];
     },
 
+    // GAME RESET FX
+    // Resets the game when the player wants to play again
     gameReset: function() {
+        // Resets number of player attempts available
         player_attempts = 3;
+        // Empties out secret code
         game.secret_code = [];
         //secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
     }
@@ -123,9 +132,14 @@ document.getElementById("official-secret-code").innerHTML = `Official Code: ${se
 // Display "Play Again" btn when game is finsihed
 const playAgain = document.getElementById("play-again-btn");
 playAgain.addEventListener("click", () => {
+    // Makes Submit btn visible
     document.getElementById("player-guess-btn").style.display = "block";
+    // Hides Play Again btn
     document.getElementById("play-again-btn").style.display = "none";
+    // Displays reset guess amount
     document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
+    // Invokes gameReset fx
     game.gameReset();
+    // Displays secret code
     console.log(secret_code);
 })
