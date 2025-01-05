@@ -86,3 +86,9 @@ button:hover {
 #secret-code-container .secret_code_number {
     display: inline;
 }
+
+/* Play Again Area */
+#play-again-btn {
+    display: none;
+    margin: auto;
+}

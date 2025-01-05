@@ -42,6 +42,7 @@ let game = {
         // if player guess == 0, then game is over
         if(player_attempts == 0) {
             document.getElementById("player-guess-btn").style.display = "none";
+            document.getElementById("play-again-btn").style.display = "block";
             return document.getElementById("player-attempts-text").innerHTML = "Game Over";
         // if player code != secret code, then -1 player guess and player gets to guess again
         } else if(player_attempts == 1) {
