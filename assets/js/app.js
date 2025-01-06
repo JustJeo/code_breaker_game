@@ -125,8 +125,17 @@ let game = {
 document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
 
 // Listens for game starting click on "Random Code" btn
-const start_btn = document.getElementById("random-code-btn")
-start_btn.addEventListener("click", () => {
+const startGame = document.getElementById("random-code-btn")
+startGame.addEventListener("click", () => {
+    // Generate Secret Code
+    game.generateSecretCode();
+
+    // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
+    console.log("Official Code:", game.secret_code);
+
+    document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+    // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
+
     // Hides Start btn
     document.getElementById("random-code-btn").style.display = "none";
     // Shows Attempt counter
@@ -137,14 +146,8 @@ start_btn.addEventListener("click", () => {
     document.getElementById("player-guess-input").style.display = "block";
     // Shows Submit btn
     document.getElementById("player-guess-btn").style.display = "block";
-    // Generate Secret Code
-    game.generateSecretCode();
 
-    // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
-    console.log("Official Code:", game.secret_code);
-
-    document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
-    // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
+    
 });
 
 // Display "Play Again" btn when game is finsihed
@@ -156,10 +159,10 @@ playAgain.addEventListener("click", () => {
     document.getElementById("play-again-btn").style.display = "none";
     // Invokes gameReset fx
     game.gameReset();
-    // Displays reset guess amount
-    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     // Displays secret code
     console.log(secret_code);
+    // Displays reset guess amount
+    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
 })
 
 
