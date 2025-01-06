@@ -17,31 +17,26 @@ function darkMode() {
 let player_attempts = 3;
 
 // Start Btn
-let start_btn = document.getElementById("random-code-btn");
+//let start_btn = document.getElementById("random-code-btn");
 
 // Generate Secret Code
-let secret_code = [];
-secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+//let secret_code = [];
+//secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
 
 // Set Empty Player Code Array
-let player_code = [];
-
-// Listens for game starting click on "Random Code" btn
-start_btn.addEventListener("click", () => {
-    // Hides Start btn
-    document.getElementById("random-code-btn").style.display = "none";
-    // Shows Attempt counter
-    document.getElementById("player-attempts-text").style.display = "block";
-    // Gets Guess Amount
-    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
-    // Shows Player Input
-    document.getElementById("player-guess-input").style.display = "block";
-    // Shows Submit btn
-    document.getElementById("player-guess-btn").style.display = "block";
-});
+//let player_code = [];
 
 // ~~~~~~~~~~ Game Logic! ~~~~~~~~~~
 let game = {
+    // Game Variables
+    secret_code: [],
+
+    // Generate Secret Code
+    generateSecretCode: function() {
+        // Generates new random code
+        game.secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+    },
+
     // GET GUESS ATTEMPTS REMAINING
     // Get number of Guesses
     getGuessAmount: function() {
@@ -132,16 +127,34 @@ document.getElementById("player-guess-btn").addEventListener("click", game.codeC
 
 // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
 // Display player guess after code submission to verify that the right numbers are being captured by the game
-document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
+//document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
 
-console.log("Official Code:", secret_code);
-console.log("Player Code:", player_code);
+console.log("Official Code:", game.secret_code);
+//console.log("Player Code:", player_code);
 
 // Display official secret code to ensure that it matches with console.log code
-document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
+document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
 
 // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
 
+
+// Listens for game starting click on "Random Code" btn
+const start_btn = document.getElementById("random-code-btn")
+start_btn.addEventListener("click", () => {
+    // Hides Start btn
+    document.getElementById("random-code-btn").style.display = "none";
+    // Shows Attempt counter
+    document.getElementById("player-attempts-text").style.display = "block";
+    // Gets Guess Amount
+    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
+    // Shows Player Input
+    document.getElementById("player-guess-input").style.display = "block";
+    // Shows Submit btn
+    document.getElementById("player-guess-btn").style.display = "block";
+    // Generate Secret Code
+    game.generateSecretCode();
+    console.log(game.secret_code);
+});
 
 // Display "Play Again" btn when game is finsihed
 const playAgain = document.getElementById("play-again-btn");
