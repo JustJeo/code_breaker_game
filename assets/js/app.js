@@ -146,10 +146,10 @@ playAgain.addEventListener("click", () => {
     document.getElementById("player-guess-btn").style.display = "block";
     // Hides Play Again btn
     document.getElementById("play-again-btn").style.display = "none";
-    // Displays reset guess amount
-    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     // Invokes gameReset fx
     game.gameReset();
+    // Displays reset guess amount
+    document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
     // Displays secret code
     console.log(secret_code);
 })
