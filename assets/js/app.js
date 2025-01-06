@@ -124,20 +124,6 @@ let game = {
 
 document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
 
-
-// ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
-// Display player guess after code submission to verify that the right numbers are being captured by the game
-//document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
-
-console.log("Official Code:", game.secret_code);
-//console.log("Player Code:", player_code);
-
-// Display official secret code to ensure that it matches with console.log code
-document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
-
-// ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
-
-
 // Listens for game starting click on "Random Code" btn
 const start_btn = document.getElementById("random-code-btn")
 start_btn.addEventListener("click", () => {
@@ -170,3 +156,18 @@ playAgain.addEventListener("click", () => {
     // Displays secret code
     console.log(secret_code);
 })
+
+
+
+
+// ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
+// Display player guess after code submission to verify that the right numbers are being captured by the game
+//document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
+
+console.log("Official Code:", game.secret_code);
+//console.log("Player Code:", player_code);
+
+// Display official secret code to ensure that it matches with console.log code
+document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+
+// ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
