@@ -139,7 +139,12 @@ start_btn.addEventListener("click", () => {
     document.getElementById("player-guess-btn").style.display = "block";
     // Generate Secret Code
     game.generateSecretCode();
-    console.log(game.secret_code);
+
+    // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
+    console.log("Official Code:", game.secret_code);
+
+    document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+    // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
 });
 
 // Display "Play Again" btn when game is finsihed
@@ -164,10 +169,10 @@ playAgain.addEventListener("click", () => {
 // Display player guess after code submission to verify that the right numbers are being captured by the game
 //document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
 
-console.log("Official Code:", game.secret_code);
+// console.log("Official Code:", game.secret_code);
 //console.log("Player Code:", player_code);
 
 // Display official secret code to ensure that it matches with console.log code
-document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+// document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
 
 // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
