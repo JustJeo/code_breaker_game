@@ -129,15 +129,19 @@ let game = {
 
 document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
 
-// TEMPORARY FEEDBACK FX
+
+// ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
 // Display player guess after code submission to verify that the right numbers are being captured by the game
 document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
 
 console.log("Official Code:", secret_code);
-console.log("Player Code:");
+console.log("Player Code:", player_code);
 
 // Display official secret code to ensure that it matches with console.log code
 document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
+
+// ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
+
 
 // Display "Play Again" btn when game is finsihed
 const playAgain = document.getElementById("play-again-btn");
