@@ -64,7 +64,7 @@ let game = {
             // Guess will be a PUSH to add most recent guess to the END of an array
             // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
             game.player_code.push(player_submission);
-            //console.log(game.player_code);
+            console.log("Player Submission:", game.player_code);
         }
     },
     
@@ -72,19 +72,18 @@ let game = {
     // Check player code to secret code
     codeCheck: function() {
         // If player guesses the correct secret code
-        if(game.player_code === game.secret_code) {
-            //console.log("Great job!");
-            game.subtractGuessAmount();
-            document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_code);
+        if(game.player_code.toString() === game.secret_code.toString()) {
+            console.log("Great job!");
+            document.querySelector("#player-attempts-text").innerHTML = "You cracked the code!";
+            console.log(game.player_code, game.secret_code);
         // Else, the player's guess doesn't match the secret code
         } else {
-            //console.log("Wrong. Try again.");
+            console.log("Wrong. Try again.");
             // Subtracts 1 from the current guess amount
             game.subtractGuessAmount();
             // Updates text on page of how many guesses are left for the player
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_code);
+            console.log(game.player_code, game.secret_code);
         }
     },
 
