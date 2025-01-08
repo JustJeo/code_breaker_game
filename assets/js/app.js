@@ -69,9 +69,10 @@ let game = {
     // PLAYER CODE GUESS
     // Place player code into player array
     playerCodeGuess: function(event) {
-        const player_submission = [];
-        event.target.id === "player-guess-btn";
-        game.player_code.push(player_submission);
+        const player_submission = [1234];
+        if (event.target.id === "player-guess-btn") {
+            game.player_code.push(player_submission);
+        }
     },
     
     // PLAYER CODE CHECK
