@@ -69,9 +69,9 @@ let game = {
     // PLAYER CODE GUESS
     // Place player code into player array
     playerCodeGuess: function(event) {
-        const playerSubmission = [];
+        const player_submission = [];
         event.target.id === "player-guess-btn";
-        game.playerCodeGuess.push(playerSubmission);
+        game.player_code.push(player_submission);
     },
     
     // PLAYER CODE CHECK
@@ -107,7 +107,7 @@ let game = {
     // RESET PLAYER INPUT FX
     // If player code != secret code, empty out player code
     resetPlayer: function() {
-        game.playerCode = [];
+        game.player_code = [];
     },
 
     // GAME RESET FX
