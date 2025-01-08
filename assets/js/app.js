@@ -35,16 +35,21 @@ let game = {
         // If player attempts == 0, then game is over
         if(player_attempts == 0) {
             console.log('Game Over.');
+            // Hides "Submit Guess" btn
             document.getElementById("player-guess-btn").style.display = "none";
+            // Shows "Play Again" btn
             document.getElementById("play-again-btn").style.display = "block";
+            // Changes text to "Game Over"
             return document.getElementById("player-attempts-text").innerHTML = "Game Over";
         // If player is on last attempt, update text to display this
         } else if(player_attempts == 1) {
             console.log('Last Attempt!');
+            // Changes text to "Last Attempt!"
             return document.getElementById("player-attempts-text").innerHTML = "Last Attempt!";
         // If player code != secret code, then -1 player attempts and player gets to guess again
         } else {
             console.log(player_attempts + ' Attempts left');
+            // Updates text to show the correct number of attempts left
             return document.getElementById("player-attempts-text").innerHTML = `${player_attempts} Attempts`;
         }
     },
