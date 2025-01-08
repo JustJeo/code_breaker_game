@@ -30,6 +30,7 @@ let player_attempts = 3;
 let game = {
     // Game Variables
     secret_code: [],
+    player_code: [],
 
     // Generate Secret Code
     generateSecretCode: function() {
@@ -70,7 +71,7 @@ let game = {
     playerCodeGuess: function(event) {
         const playerSubmission = [];
         event.target.id === "player-guess-btn";
-        game.playerCode.push(playerSubmission);
+        game.playerCodeGuess.push(playerSubmission);
     },
     
     // PLAYER CODE CHECK
@@ -81,6 +82,7 @@ let game = {
             //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
+            console.log("Player Submission:", game.player_code);
         // Else, the player's guess doesn't match the secret code
         } else {
             //console.log("Wrong. Try again.");
@@ -88,6 +90,7 @@ let game = {
             game.subtractGuessAmount();
             // Updates text on page of how many guesses are left for the player
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
+            console.log("Player Submission:", game.player_code);
         }
     },
 
