@@ -78,8 +78,13 @@ let game = {
     codeCheck: function() {
         // If player guesses the correct secret code
         if(game.player_code.toString() === game.secret_code.toString()) {
-            console.log("Great job!");
+            // Updates text where attempts are
             document.querySelector("#player-attempts-text").innerHTML = "You cracked the code!";
+            // Hides "Submit Guess" btn
+            document.getElementById("player-guess-btn").style.display = "none";
+            // Shows "Play Again" btn
+            document.getElementById("play-again-btn").style.display = "block";
+            console.log("Great job!");
             console.log(game.player_code, game.secret_code);
         // Else, the player's guess doesn't match the secret code
         } else {
