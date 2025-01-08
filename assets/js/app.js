@@ -6,12 +6,6 @@ function lightMode() {
     element.classList.toggle("light-mode");
 };
 
-// ~~~~~~~~~~ Dark Mode FX ~~~~~~~~~~
-function darkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-};
-
 // ~~~~~~~~~~ Initial Load Declarations ~~~~~~~~~~
 // Player Guess
 let player_attempts = 3;
