@@ -30,7 +30,7 @@ let player_attempts = 3;
 let game = {
     // Game Variables
     secret_code: [],
-    player_code: [],
+    player_code: document.getElementById("player-submission-input"),
 
     // Generate Secret Code
     generateSecretCode: function() {
@@ -69,9 +69,13 @@ let game = {
     // PLAYER CODE GUESS
     // Place player code into player array
     playerCodeGuess: function(event) {
-        const player_submission = [1234];
+        // .value grabs the submitted value in the input field
+        // .trim removes any extra spaces that could be entered
+        const player_submission = game.player_code.value.trim();
         if (event.target.id === "player-guess-btn") {
-            game.player_code.push(player_submission);
+            console.log(player_submission);
+            game.player_code = player_submission;
+            //game.player_code.push(player_submission);
         }
     },
     
