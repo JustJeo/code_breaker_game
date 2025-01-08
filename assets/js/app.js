@@ -70,6 +70,7 @@ let game = {
     codeCheck: function() {
         // If player guesses the correct secret code
         if(game.player_code.toString() === game.secret_code.toString()) {
+            console.log("Great job!");
             // Updates text where attempts are
             document.querySelector("#player-attempts-text").innerHTML = "You cracked the code!";
             // Calls gameOver fx
@@ -105,21 +106,24 @@ let game = {
         document.getElementById("player-guess-btn").style.display = "none";
         // Shows "Play Again" btn
         document.getElementById("play-again-btn").style.display = "block";
-        console.log("Great job!");
     },
 
     // GAME RESET FX
     // Resets the game when the player wants to play again
     gameReset: function() {
         // Resets number of player attempts available
-        player_attempts = 3;
+        this.player_attempts = 3;
+        // Empties out player code
+        this.player_code = [];
         // Empties out secret code
-        secret_code = [];
+        this.secret_code = [];
         // Generates new random code
-        secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+        this.secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
         // Updates "Official Code" on feedback section
         // Delete this before official 1.0 ver. For feedback while making game only
-        document.getElementById("official-secret-code").innerHTML = `Official Code: ${secret_code} `;
+        document.getElementById("official-secret-code").innerHTML = `Official Code: ${this.secret_code} `;
+        console.log("Player Code:", this.player_code);
+        console.log("Secret Code:", this.secret_code);
     }
 }
 
@@ -161,7 +165,7 @@ playAgain.addEventListener("click", () => {
     // Calls gameReset fx
     game.gameReset();
     // Displays secret code
-    console.log(secret_code);
+    console.log(game.secret_code);
     // Displays reset guess amount
     document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
 })
