@@ -16,23 +16,13 @@ function darkMode() {
 // Player Guess
 let player_attempts = 3;
 
-// Start Btn
-//let start_btn = document.getElementById("random-code-btn");
-
-// Generate Secret Code
-//let secret_code = [];
-//secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
-
-// Set Empty Player Code Array
-//let player_input = [];
-
 // ~~~~~~~~~~ Game Logic! ~~~~~~~~~~
 let game = {
     // Game Variables
     secret_code: [],
-    player_input: document.getElementById("player-submission-input"),
     player_code: [],
 
+    // SECRET CODE FX
     // Generate Secret Code
     generateSecretCode: function() {
         // Generates new random code
@@ -59,21 +49,20 @@ let game = {
         }
     },
 
-    // SECRET CODE FX
-    // Place secret code into secret array
 
     // PLAYER GUESS SUBMIT FX
-    // Player submits a guess
-    // Guess will be a PUSH to add most recent guess to the END of an array
-    // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
+    // Player submits a guess in the input field
+    player_input: document.getElementById("player-submission-input"),
     
     // PLAYER CODE GUESS
-    // Place player code into player array
+    // Place player input submission into official player code array
     playerCodeGuess: function(event) {
         // .value grabs the submitted value in the input field
         // .trim removes any extra spaces that could be entered
         const player_submission = game.player_input.value.trim();
         if (event.target.id === "player-guess-btn") {
+            // Guess will be a PUSH to add most recent guess to the END of an array
+            // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
             game.player_code.push(player_submission);
             //console.log(game.player_code);
         }
@@ -83,7 +72,7 @@ let game = {
     // Check player code to secret code
     codeCheck: function() {
         // If player guesses the correct secret code
-        if(game.player_input === game.secret_code) {
+        if(game.player_code === game.secret_code) {
             //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
