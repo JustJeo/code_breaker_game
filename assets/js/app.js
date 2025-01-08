@@ -125,8 +125,6 @@ let game = {
     }
 }
 
-document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
-
 // Listens for game starting click on "Random Code" btn
 const startGame = document.getElementById("random-code-btn")
 startGame.addEventListener("click", () => {
@@ -152,6 +150,10 @@ startGame.addEventListener("click", () => {
 
     
 });
+
+// Listens for click on "Submit Guess" btn
+document.getElementById("player-guess-btn").addEventListener("click", game.playerCodeGuess);
+document.getElementById("player-guess-btn").addEventListener("click", game.codeCheck);
 
 // Display "Play Again" btn when game is finsihed
 const playAgain = document.getElementById("play-again-btn");
