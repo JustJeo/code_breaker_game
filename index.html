@@ -44,22 +44,23 @@
         </div>
         <div class="text-center game_container">
             <div id="secret-code-container">
-                <h2>Secret Code</h2>
+                <!-- <h2>Secret Code</h2> -->
                 <button type="button" id="random-code-btn">Get Secret Code</button>
                 <h3 class="secret_code_number" id="code-slot-1"></h3>
                 <h3 class="secret_code_number" id="code-slot-2"></h3>
                 <h3 class="secret_code_number" id="code-slot-3"></h3>
                 <h3 class="secret_code_number" id="code-slot-4"></h3>
+                <div id="feedback-container">
+                    <!-- <p id="player-guess-display">Player Submission:</p> -->
+                    <h3 class="secret_code_number" id="official-secret-code"></h3>
+                </div>
             </div>
             <div id="player-code-container">
                 <div id="player-guess-input">
                     <input type="number" id="player-submission-input" placeholder="Enter Number">
                 </div>
                 <button type="button" id="player-guess-btn">Submit Guess</button>
-                <div id="feedback-container">
-                    <!-- <p id="player-guess-display">Player Submission:</p> -->
-                    <h5 class="secret_code_number" id="official-secret-code"></h3>
-                </div>
+                
             </div>
             <div id="after-game">
                 <button type="button" id="play-again-btn">Play Again</button>
