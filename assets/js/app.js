@@ -35,10 +35,8 @@ let game = {
         // If player attempts == 0, then game is over
         if(player_attempts == 0) {
             console.log('Game Over.');
-            // Hides "Submit Guess" btn
-            document.getElementById("player-guess-btn").style.display = "none";
-            // Shows "Play Again" btn
-            document.getElementById("play-again-btn").style.display = "block";
+            // Calls gameOver fx
+            game.gameOver();
             // Changes text to "Game Over"
             return document.getElementById("player-attempts-text").innerHTML = "Game Over";
         // If player is on last attempt, update text to display this
@@ -80,11 +78,8 @@ let game = {
         if(game.player_code.toString() === game.secret_code.toString()) {
             // Updates text where attempts are
             document.querySelector("#player-attempts-text").innerHTML = "You cracked the code!";
-            // Hides "Submit Guess" btn
-            document.getElementById("player-guess-btn").style.display = "none";
-            // Shows "Play Again" btn
-            document.getElementById("play-again-btn").style.display = "block";
-            console.log("Great job!");
+            // Calls gameOver fx
+            game.gameOver();
             console.log(game.player_code, game.secret_code);
         // Else, the player's guess doesn't match the secret code
         } else {
@@ -96,10 +91,6 @@ let game = {
             console.log(game.player_code, game.secret_code);
         }
     },
-
-    // PLAYER CODE WIN
-    // If player code == secret code, then player wins
-
     
     // GUESS AMOUNT SUBTRACTION FX
     // If player code != secret code, minus one from total attempts left
@@ -111,6 +102,16 @@ let game = {
     // If player code != secret code, empty out player code
     resetPlayer: function() {
         game.player_input = [];
+    },
+
+    // GAME OVER FX
+    // Triggers when the game is over for whatever reason
+    gameOver: function() {
+        // Hides "Submit Guess" btn
+        document.getElementById("player-guess-btn").style.display = "none";
+        // Shows "Play Again" btn
+        document.getElementById("play-again-btn").style.display = "block";
+        console.log("Great job!");
     },
 
     // GAME RESET FX
@@ -150,8 +151,6 @@ startGame.addEventListener("click", () => {
     document.getElementById("player-guess-input").style.display = "block";
     // Shows Submit btn
     document.getElementById("player-guess-btn").style.display = "block";
-
-    
 });
 
 // Listens for click on "Submit Guess" btn
@@ -165,7 +164,7 @@ playAgain.addEventListener("click", () => {
     document.getElementById("player-guess-btn").style.display = "block";
     // Hides Play Again btn
     document.getElementById("play-again-btn").style.display = "none";
-    // Invokes gameReset fx
+    // Calls gameReset fx
     game.gameReset();
     // Displays secret code
     console.log(secret_code);
