@@ -24,13 +24,14 @@ let player_attempts = 3;
 //secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
 
 // Set Empty Player Code Array
-//let player_code = [];
+//let player_input = [];
 
 // ~~~~~~~~~~ Game Logic! ~~~~~~~~~~
 let game = {
     // Game Variables
     secret_code: [],
-    player_code: document.getElementById("player-submission-input"),
+    player_input: document.getElementById("player-submission-input"),
+    player_code: [],
 
     // Generate Secret Code
     generateSecretCode: function() {
@@ -71,11 +72,11 @@ let game = {
     playerCodeGuess: function(event) {
         // .value grabs the submitted value in the input field
         // .trim removes any extra spaces that could be entered
-        const player_submission = game.player_code.value.trim();
+        const player_submission = game.player_input.value.trim();
         if (event.target.id === "player-guess-btn") {
             console.log(player_submission);
-            game.player_code = player_submission;
-            //game.player_code.push(player_submission);
+            game.player_input = player_submission;
+            //game.player_input.push(player_submission);
         }
     },
     
@@ -83,11 +84,11 @@ let game = {
     // Check player code to secret code
     codeCheck: function() {
         // If player guesses the correct secret code
-        if(game.player_code === game.secret_code) {
+        if(game.player_input === game.secret_code) {
             //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_code);
+            console.log("Player Submission:", game.player_input);
         // Else, the player's guess doesn't match the secret code
         } else {
             //console.log("Wrong. Try again.");
@@ -95,7 +96,7 @@ let game = {
             game.subtractGuessAmount();
             // Updates text on page of how many guesses are left for the player
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_code);
+            console.log("Player Submission:", game.player_input);
         }
     },
 
@@ -112,7 +113,7 @@ let game = {
     // RESET PLAYER INPUT FX
     // If player code != secret code, empty out player code
     resetPlayer: function() {
-        game.player_code = [];
+        game.player_input = [];
     },
 
     // GAME RESET FX
@@ -180,10 +181,10 @@ playAgain.addEventListener("click", () => {
 
 // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
 // Display player guess after code submission to verify that the right numbers are being captured by the game
-//document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_code} `;
+//document.getElementById("player-guess-display").innerHTML = `Player Submission: ${player_input} `;
 
 // console.log("Official Code:", game.secret_code);
-//console.log("Player Code:", player_code);
+//console.log("Player Code:", player_input);
 
 // Display official secret code to ensure that it matches with console.log code
 // document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
