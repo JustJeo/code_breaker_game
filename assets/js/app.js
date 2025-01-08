@@ -74,9 +74,8 @@ let game = {
         // .trim removes any extra spaces that could be entered
         const player_submission = game.player_input.value.trim();
         if (event.target.id === "player-guess-btn") {
-            console.log(player_submission);
-            game.player_input = player_submission;
-            //game.player_input.push(player_submission);
+            game.player_code.push(player_submission);
+            //console.log(game.player_code);
         }
     },
     
@@ -88,7 +87,7 @@ let game = {
             //console.log("Great job!");
             game.subtractGuessAmount();
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_input);
+            console.log("Player Submission:", game.player_code);
         // Else, the player's guess doesn't match the secret code
         } else {
             //console.log("Wrong. Try again.");
@@ -96,7 +95,7 @@ let game = {
             game.subtractGuessAmount();
             // Updates text on page of how many guesses are left for the player
             document.querySelector("#player-attempts-text").innerHTML = game.getGuessAmount();
-            console.log("Player Submission:", game.player_input);
+            console.log("Player Submission:", game.player_code);
         }
     },
 
