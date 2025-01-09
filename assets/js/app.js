@@ -121,18 +121,18 @@ let game = {
     // Resets the game when the player wants to play again
     gameReset: function() {
         // Resets number of player attempts available
-        this.player_attempts = 3;
+        game.player_attempts = 3;
         // Empties out player code
-        this.player_code = [];
+        game.player_code = [];
         // Empties out secret code
-        this.secret_code = [];
+        game.secret_code = [];
         // Generates new random code
-        this.secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+        game.generateSecretCode();
         // Updates "Official Code" on feedback section
         // Delete this before official 1.0 ver. For feedback while making game only
-        document.getElementById("official-secret-code").innerHTML = `Official Code: ${this.secret_code} `;
-        console.log("Player Code:", this.player_code);
-        console.log("Secret Code:", this.secret_code);
+        document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+        console.log("Player Code:", game.player_code);
+        console.log("Secret Code:", game.secret_code);
     }
 }
 
