@@ -84,6 +84,11 @@ button:hover {
     margin: 10px auto;
 }
 
+.player-input-box {
+    height: 150px;
+    width: 100px;
+}
+
 #player-guess-btn {
     display: none;
     margin: 15px auto;  
