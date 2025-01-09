@@ -16,6 +16,7 @@ let game = {
     secret_code: [],
     secret_code_separated: [],
     player_code: [],
+    player_code_separated: [],
 
     // SECRET CODE FX
     // Generate Secret Code
@@ -73,16 +74,37 @@ let game = {
     // PLAYER GUESS SUBMIT FX
     // Player submits a guess in the input field
     player_input: document.getElementById("player-submission-input"),
+    player_single_digit_1: document.getElementById("player-submission-input-1"),
+    player_single_digit_2: document.getElementById("player-submission-input-2"),
+    player_single_digit_3: document.getElementById("player-submission-input-3"),
+    player_single_digit_4: document.getElementById("player-submission-input-4"),
     
     // PLAYER CODE GUESS
     // Place player input submission into official player code array
     playerCodeGuess: function(event) {
         // .value grabs the submitted value in the input field
         // .trim removes any extra spaces that could be entered
-        const player_submission = game.player_input.value.trim();
+        //const player_submission = game.player_input.value.trim();
+        const player_submission_digit_place_1 = game.player_single_digit_1.value;
+        const player_submission_digit_place_2 = game.player_single_digit_2.value;
+        const player_submission_digit_place_3 = game.player_single_digit_3.value;
+        const player_submission_digit_place_4 = game.player_single_digit_4.value;
+
+        //const player_submission = game.player_single_digit.value;
+        // if (event.target.id === "player-guess-btn") {
+        //     // Guess will be a PUSH to add most recent guess to the END of an array
+        //     // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
+        //     game.player_code.push(player_submission);
+        //     console.log("Player Submission:", game.player_code);
+        // }
         if (event.target.id === "player-guess-btn") {
-            // Guess will be a PUSH to add most recent guess to the END of an array
-            // Using PUSH will allow us to display past guesses to the player if their first guess is wrong.
+            game.player_code_separated.push(player_submission_digit_place_1);
+            game.player_code_separated.push(player_submission_digit_place_2);
+            game.player_code_separated.push(player_submission_digit_place_3);
+            game.player_code_separated.push(player_submission_digit_place_4);
+            console.log("Player Submission:", game.player_code_separated);
+
+            const player_submission = game.player_code_separated.join("");
             game.player_code.push(player_submission);
             console.log("Player Submission:", game.player_code);
         }
