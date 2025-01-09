@@ -56,6 +56,19 @@ let game = {
         }
     },
 
+    // VALIDATE PLAYER GUESS FX
+    // Checks that the value in the player input boxes are
+        // - Numbers
+        // - Single digit numbers [0-9]
+        // - Not a negative number
+    validPlayerNumber: function(event) {
+        const number_value = parseInt(event.number_value, 10);
+        if (number_value > 9) {
+            event.number_value = 9;
+        } else if (number_value < 0) {
+            event.number_value = 0;
+        }
+    },
 
     // PLAYER GUESS SUBMIT FX
     // Player submits a guess in the input field
