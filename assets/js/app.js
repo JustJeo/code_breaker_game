@@ -14,6 +14,7 @@ let player_attempts = 3;
 let game = {
     // Game Variables
     secret_code: [],
+    secret_code_separated: [],
     player_code: [],
 
     // SECRET CODE FX
@@ -28,8 +29,8 @@ let game = {
     // Separate the randomly generated code into individual digits
     splitSecretCode: function() {
         // Access the first element of the array and split it
-        let separated_code = game.secret_code[0].split('');
-        console.log("Separated Code:", separated_code);
+        game.separated_code = game.secret_code[0].split('');
+        console.log("Separated Code:", game.separated_code);
     },
 
     // GET GUESS ATTEMPTS REMAINING
@@ -146,6 +147,12 @@ startGame.addEventListener("click", () => {
     console.log("Official Code:", game.secret_code);
 
     document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
+
+    // Displays official code as individual digits
+    document.querySelector("#code-slot-1").innerHTML = game.separated_code[0];
+    document.querySelector("#code-slot-2").innerHTML = game.separated_code[1];
+    document.querySelector("#code-slot-3").innerHTML = game.separated_code[2];
+    document.querySelector("#code-slot-4").innerHTML = game.separated_code[3];
     // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
 
     // Hides Start btn
