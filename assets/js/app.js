@@ -21,6 +21,15 @@ let game = {
     generateSecretCode: function() {
         // Generates new random code
         game.secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
+        game.splitSecretCode();
+    },
+    
+    // SPLIT SECRET CODE
+    // Separate the randomly generated code into individual digits
+    splitSecretCode: function() {
+        // Access the first element of the array and split it
+        let separated_code = game.secret_code[0].split('');
+        console.log("Separated Code:", separated_code);
     },
 
     // GET GUESS ATTEMPTS REMAINING
