@@ -79,6 +79,18 @@ button:hover {
 }
 
 /* Player Zone */
+#player-display-screen {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 24px;
+    line-height: 50px;
+    background-color: #eee;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 #player-guess-input {
     display: none;
     margin: 10px auto;
