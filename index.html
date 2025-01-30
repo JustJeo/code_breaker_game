@@ -43,35 +43,28 @@
             </div>
         </div>
         <div class="text-center game_container">
-            <div id="one-digit-code-game">
-                <div id="one-digit-secret-code-container">
-                    <button type="button" id="random-single-code-btn">1 Digit Code Game</button>
-                    <h3 class="secret_code_number" id="one-digit-secret-code"></h3>
+            <div id="secret-code-container">
+                <!-- <h2>Secret Code</h2> -->
+                <button type="button" id="random-code-btn">Get Secret Code</button>
+                <h3 class="secret_code_number" id="code-slot-1"></h3>
+                <h3 class="secret_code_number" id="code-slot-2"></h3>
+                <h3 class="secret_code_number" id="code-slot-3"></h3>
+                <h3 class="secret_code_number" id="code-slot-4"></h3>
+                <div id="feedback-container">
+                    <!-- <p id="player-guess-display">Player Submission:</p> -->
+                    <h3 class="secret_code_number" id="official-secret-code"></h3>
                 </div>
             </div>
-            <div id="four-digit-code-game">
-                <div id="four-digit-secret-code-container">
-                    <!-- <h2>Secret Code</h2> -->
-                    <button type="button" id="random-code-btn">Get 4 Digit Secret Code</button>
-                    <h3 class="secret_code_number" id="code-slot-1"></h3>
-                    <h3 class="secret_code_number" id="code-slot-2"></h3>
-                    <h3 class="secret_code_number" id="code-slot-3"></h3>
-                    <h3 class="secret_code_number" id="code-slot-4"></h3>
-                    <div id="feedback-container">
-                        <!-- <p id="player-guess-display">Player Submission:</p> -->
-                        <h3 class="secret_code_number" id="official-secret-code"></h3>
-                    </div>
+            <div id="player-code-container">
+                <div id="player-guess-input">
+                    <!-- <input type="number" id="player-submission-input" placeholder="Enter Number"> -->
+                    <input type="number" class="player-input-box text-center" id="player-submission-input-1" placeholder="0" min="0" max="9" step="1">
+                    <input type="number" class="player-input-box text-center" id="player-submission-input-2" placeholder="0" min="0" max="9" step="1">
+                    <input type="number" class="player-input-box text-center" id="player-submission-input-3" placeholder="0" min="0" max="9" step="1">
+                    <input type="number" class="player-input-box text-center" id="player-submission-input-4" placeholder="0" min="0" max="9" step="1">
                 </div>
-                <div id="player-code-container">
-                    <div id="player-guess-input">
-                        <!-- <input type="number" id="player-submission-input" placeholder="Enter Number"> -->
-                        <input type="number" class="player-input-box text-center" id="player-submission-input-1" placeholder="0" min="0" max="9" step="1">
-                        <input type="number" class="player-input-box text-center" id="player-submission-input-2" placeholder="0" min="0" max="9" step="1">
-                        <input type="number" class="player-input-box text-center" id="player-submission-input-3" placeholder="0" min="0" max="9" step="1">
-                        <input type="number" class="player-input-box text-center" id="player-submission-input-4" placeholder="0" min="0" max="9" step="1">
-                    </div>
-                    <button type="button" id="player-guess-btn">Submit Guess</button>
-                </div>
+                <button type="button" id="player-guess-btn">Submit Guess</button>
+                
             </div>
             <div id="after-game">
                 <button type="button" id="play-again-btn">Play Again</button>

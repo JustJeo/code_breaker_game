@@ -192,8 +192,6 @@ startGame.addEventListener("click", () => {
 
     // Hides Start btn
     document.getElementById("random-code-btn").style.display = "none";
-    // Hides Other Digit game btns
-    document.getElementById("random-single-code-btn").style.display = "none";
     // Shows Attempt counter
     document.getElementById("player-attempts-text").style.display = "block";
     // Gets Guess Amount
