@@ -23,16 +23,16 @@ let game = {
     generateSecretCode: function() {
         // Generates new random code
         game.secret_code.push(Math.floor(Math.random()*10000).toString().padStart(4, '0'));
-        game.splitSecretCode();
+        //game.splitSecretCode();
     },
     
-    // SPLIT SECRET CODE
-    // Separate the randomly generated code into individual digits
-    splitSecretCode: function() {
-        // Access the first element of the array and split it
-        game.separated_code = game.secret_code[0].split('');
-        console.log("Separated Code:", game.separated_code);
-    },
+    // // SPLIT SECRET CODE
+    // // Separate the randomly generated code into individual digits
+    // splitSecretCode: function() {
+    //     // Access the first element of the array and split it
+    //     game.separated_code = game.secret_code[0].split('');
+    //     console.log("Separated Code:", game.separated_code);
+    // },
 
     // GET GUESS ATTEMPTS REMAINING
     // Get number of Guesses
@@ -184,10 +184,10 @@ startGame.addEventListener("click", () => {
     document.getElementById("official-secret-code").innerHTML = `Official Code: ${game.secret_code} `;
 
     // Displays official code as individual digits
-    document.querySelector("#code-slot-1").innerHTML = game.separated_code[0];
-    document.querySelector("#code-slot-2").innerHTML = game.separated_code[1];
-    document.querySelector("#code-slot-3").innerHTML = game.separated_code[2];
-    document.querySelector("#code-slot-4").innerHTML = game.separated_code[3];
+    // document.querySelector("#code-slot-1").innerHTML = game.separated_code[0];
+    // document.querySelector("#code-slot-2").innerHTML = game.separated_code[1];
+    // document.querySelector("#code-slot-3").innerHTML = game.separated_code[2];
+    // document.querySelector("#code-slot-4").innerHTML = game.separated_code[3];
     // ~~~~~~~~~~ TEMPORARY FEEDBACK END ~~~~~~~~~~
 
     // Hides Start btn
