@@ -96,7 +96,7 @@ button:hover {
 }
 
 /* Secret Code */
-#secret-code-container .secret_code_number {
+#four-digit-secret-code-container .secret_code_number {
     display: inline;
 }
 
