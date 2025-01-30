@@ -46,19 +46,36 @@ let game = {
         }
     },
 
+    // KEYPAD LOGIC
+    keypadLogic: function() {
+        const screen = document.getElementById("player-display-screen");
+        const buttons = document.querySelectorAll(".keypad-num");
+        const clearButton = document.getElementById("keypad-btn-clear");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                screen.textContent += this.getAttribute("data-value");
+            });
+        });
+    
+        clearButton.addEventListener("click", function () {
+            screen.textContent = "";
+        });
+    },
+
     // VALIDATE PLAYER GUESS FX
     // Checks that the value in the player input boxes are
         // - Numbers
         // - Single digit numbers [0-9]
         // - Not a negative number
-    validPlayerNumber: function(event) {
-        const number_value = parseInt(event.number_value, 10);
-        if (number_value > 9) {
-            event.number_value = 9;
-        } else if (number_value < 0) {
-            event.number_value = 0;
-        }
-    },
+    // validPlayerNumber: function(event) {
+    //     const number_value = parseInt(event.number_value, 10);
+    //     if (number_value > 9) {
+    //         event.number_value = 9;
+    //     } else if (number_value < 0) {
+    //         event.number_value = 0;
+    //     }
+    // },
 
     // PLAYER GUESS SUBMIT FX
     // Player submits a guess in the input field
@@ -147,6 +164,9 @@ const startGame = document.getElementById("random-code-btn")
 startGame.addEventListener("click", () => {
     // Generate Secret Code
     game.generateSecretCode();
+
+    // Keypad Logic Loads
+    game.keypadLogic();
 
     // ~~~~~~~~~~ TEMPORARY FEEDBACK START ~~~~~~~~~~
     console.log("Official Code:", game.secret_code);

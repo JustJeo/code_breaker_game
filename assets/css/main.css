@@ -87,6 +87,7 @@ button:hover {
     font-size: 24px;
     line-height: 50px;
     background-color: #eee;
+    color: black;
     margin: auto;
     margin-bottom: 10px;
 }
