@@ -16,7 +16,7 @@ let game = {
     secret_code: [],
     secret_code_separated: [],
     player_code: [],
-    player_code_separated: [],
+    // player_code_separated: [],
 
     // SECRET CODE FX
     // Generate Secret Code
@@ -85,10 +85,10 @@ let game = {
         // .value grabs the submitted value in the input field
         // .trim removes any extra spaces that could be entered
         //const player_submission = game.player_input.value.trim();
-        const player_submission_digit_place_1 = game.player_single_digit_1.value;
-        const player_submission_digit_place_2 = game.player_single_digit_2.value;
-        const player_submission_digit_place_3 = game.player_single_digit_3.value;
-        const player_submission_digit_place_4 = game.player_single_digit_4.value;
+        // const player_submission_digit_place_1 = game.player_single_digit_1.value;
+        // const player_submission_digit_place_2 = game.player_single_digit_2.value;
+        // const player_submission_digit_place_3 = game.player_single_digit_3.value;
+        // const player_submission_digit_place_4 = game.player_single_digit_4.value;
 
         //const player_submission = game.player_single_digit.value;
         // if (event.target.id === "player-guess-btn") {
@@ -98,13 +98,13 @@ let game = {
         //     console.log("Player Submission:", game.player_code);
         // }
         if (event.target.id === "player-guess-btn") {
-            game.player_code_separated.push(player_submission_digit_place_1);
-            game.player_code_separated.push(player_submission_digit_place_2);
-            game.player_code_separated.push(player_submission_digit_place_3);
-            game.player_code_separated.push(player_submission_digit_place_4);
-            console.log("Player Submission:", game.player_code_separated);
+            // game.player_code_separated.push(player_submission_digit_place_1);
+            // game.player_code_separated.push(player_submission_digit_place_2);
+            // game.player_code_separated.push(player_submission_digit_place_3);
+            // game.player_code_separated.push(player_submission_digit_place_4);
+            // console.log("Player Submission:", game.player_code_separated);
 
-            const player_submission = game.player_code_separated.join("");
+            const player_submission = [];
             game.player_code.push(player_submission);
             console.log("Player Submission:", game.player_code);
         }
