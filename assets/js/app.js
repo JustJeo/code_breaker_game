@@ -46,6 +46,15 @@ let game = {
         }
     },
 
+    // READ NOTE BTN
+    readNote: function() {
+        const note = document.getElementById("note-btn");
+
+        note.addEventListener("click", function() {
+            alert("This is a work in progress.");
+        });
+    },
+
     // KEYPAD LOGIC
     keypadLogic: function() {
         const screen = document.getElementById("player-display-screen");
@@ -165,6 +174,9 @@ startGame.addEventListener("click", () => {
     // Generate Secret Code
     game.generateSecretCode();
 
+    // Read Note Logic
+    game.readNote();
+
     // Keypad Logic Loads
     game.keypadLogic();
 
@@ -180,6 +192,8 @@ startGame.addEventListener("click", () => {
     document.getElementById("player-attempts-text").style.display = "block";
     // Gets Guess Amount
     document.getElementById("player-attempts-text").innerHTML = game.getGuessAmount();
+    // Shows 'Read Note' btn
+    document.getElementById("read-note-container").style.display = "block";
     // Shows Player Input
     document.getElementById("player-guess-input").style.display = "block";
     // Shows Submit btn

@@ -78,6 +78,11 @@ button:hover {
     display: none;
 }
 
+/* Read Note */
+#read-note-container {
+    display: none;
+}
+
 /* Player Zone */
 #player-display-screen {
     width: 200px;
