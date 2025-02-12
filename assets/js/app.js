@@ -51,7 +51,7 @@ let game = {
         const note = document.getElementById("note-btn");
 
         note.addEventListener("click", function() {
-            document.getElementById("player-attempts-text").style.display = "block";
+            document.getElementById("note-text").style.display = "block";
         });
     },
 
