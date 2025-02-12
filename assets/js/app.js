@@ -51,7 +51,7 @@ let game = {
         const note = document.getElementById("note-btn");
 
         note.addEventListener("click", function() {
-            alert("This is a work in progress.");
+            document.getElementById("player-attempts-text").style.display = "block";
         });
     },
 
