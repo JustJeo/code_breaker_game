@@ -55,6 +55,14 @@ let game = {
         });
     },
 
+    closeNote: function() {
+        const note = document.getElementById("note-close-btn");
+
+        note.addEventListener("click", function() {
+            document.getElementById("note-text").style.display = "none";
+        });
+    },
+
     // KEYPAD LOGIC
     keypadLogic: function() {
         const screen = document.getElementById("player-display-screen");
@@ -176,6 +184,7 @@ startGame.addEventListener("click", () => {
 
     // Read Note Logic
     game.readNote();
+    game.closeNote();
 
     // Keypad Logic Loads
     game.keypadLogic();
