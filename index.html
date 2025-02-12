@@ -55,39 +55,41 @@
                     <h3 class="secret_code_number" id="official-secret-code"></h3>
                 </div>
             </div>
-            <div id="read-note-container">
-                <button id="note-btn" class="text-center">Read Note</button>
-                <div id="note-text">
-                    <h4>Welcome to my little game. Do you think you can crack the code?</h4>
-                    <h5>
-                        <p>Here are a few hints about the code.</p>
-                        <li>The code is [4] digits long</li>
-                        <li>There are [x] even numbers and [x] odd numbers</li>
-                        <li>The code [does/does not] start with a leading zero</li>
-                    </h5>
+            <div id="note-keypad-section">
+                <div id="read-note-container" class="half-page">
+                    <button id="note-btn" class="text-center">Read Note</button>
+                    <div id="note-text">
+                        <h4>Welcome to my little game. Do you think you can crack the code?</h4>
+                        <h5>
+                            <p>Here are a few hints about the code.</p>
+                            <li>The code is [4] digits long</li>
+                            <li>There are [x] even numbers and [x] odd numbers</li>
+                            <li>The code [does/does not] start with a leading zero</li>
+                        </h5>
 
-                    <button id="note-close-btn" class="text-center">Close Note</button>
-                </div>
-            </div>
-            <div id="player-code-container">
-                <div id="player-guess-input">
-                    <div id="player-keypad">
-                        <div id="player-display-screen"></div>
-                        <!-- Keypad Set Up -->
-                        <button id="keypad-btn-1" data-value="1" class="keypad-num">1</button>
-                        <button id="keypad-btn-2" data-value="2" class="keypad-num">2</button>
-                        <button id="keypad-btn-3" data-value="3" class="keypad-num">3</button>
-                        <button id="keypad-btn-4" data-value="4" class="keypad-num">4</button>
-                        <button id="keypad-btn-5" data-value="5" class="keypad-num">5</button>
-                        <button id="keypad-btn-6" data-value="6" class="keypad-num">6</button>
-                        <button id="keypad-btn-7" data-value="7" class="keypad-num">7</button>
-                        <button id="keypad-btn-8" data-value="8" class="keypad-num">8</button>
-                        <button id="keypad-btn-9" data-value="9" class="keypad-num">9</button>
-                        <button id="keypad-btn-0" data-value="0" class="keypad-num">0</button>
-                        <button id="keypad-btn-clear">Clear</button>   
+                        <button id="note-close-btn" class="text-center">Close Note</button>
                     </div>
                 </div>
-                <button type="button" id="player-guess-btn">Submit Guess</button>
+                <div id="player-code-container" class="half-page">
+                    <div id="player-guess-input">
+                        <div id="player-keypad">
+                            <div id="player-display-screen"></div>
+                            <!-- Keypad Set Up -->
+                            <button id="keypad-btn-1" data-value="1" class="keypad-num">1</button>
+                            <button id="keypad-btn-2" data-value="2" class="keypad-num">2</button>
+                            <button id="keypad-btn-3" data-value="3" class="keypad-num">3</button>
+                            <button id="keypad-btn-4" data-value="4" class="keypad-num">4</button>
+                            <button id="keypad-btn-5" data-value="5" class="keypad-num">5</button>
+                            <button id="keypad-btn-6" data-value="6" class="keypad-num">6</button>
+                            <button id="keypad-btn-7" data-value="7" class="keypad-num">7</button>
+                            <button id="keypad-btn-8" data-value="8" class="keypad-num">8</button>
+                            <button id="keypad-btn-9" data-value="9" class="keypad-num">9</button>
+                            <button id="keypad-btn-0" data-value="0" class="keypad-num">0</button>
+                            <button id="keypad-btn-clear">Clear</button>   
+                        </div>
+                    </div>
+                    <button type="button" id="player-guess-btn">Submit Guess</button>
+                </div>
             </div>
             <div id="after-game">
                 <button type="button" id="play-again-btn">Play Again</button>

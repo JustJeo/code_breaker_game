@@ -62,6 +62,19 @@ button:hover {
     cursor: pointer;
 }
 
+/* Page Percentages */
+.half-page {
+    width: 50%;
+}
+
+.third-page {
+    width: 33%;
+}
+
+.quater-page {
+    width: 25%;
+}
+
 /* Opening Text */
 #game-text-intro {
     text-align: center;
