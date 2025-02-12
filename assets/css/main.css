@@ -85,6 +85,11 @@ button:hover {
 
 #note-text {
     display: none;
+    margin: auto;
+    border-color: black;
+    width: 60%;
+    color: black;
+    background-color: antiquewhite;
 }
 
 /* Player Zone */
