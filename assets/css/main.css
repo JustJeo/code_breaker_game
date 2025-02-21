@@ -96,6 +96,10 @@ button:hover {
     display: none;
 }
 
+#note-keypad-section {
+    display: flex;
+}
+
 #note-text {
     display: none;
     margin: auto;
