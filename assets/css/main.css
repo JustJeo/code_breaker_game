@@ -92,10 +92,6 @@ button:hover {
 }
 
 /* Read Note */
-#read-note-container {
-    display: none;
-}
-
 #note-keypad-section {
     display: flex;
 }
