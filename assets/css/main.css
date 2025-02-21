@@ -63,6 +63,10 @@ button:hover {
 }
 
 /* Page Percentages */
+.two-thirds-page {
+    width: 66%;
+}
+
 .half-page {
     width: 50%;
 }
@@ -78,6 +82,10 @@ button:hover {
 /* Opening Text */
 #game-text-intro {
     text-align: center;
+}
+
+#game-text-intro #game-name h1 {
+    margin: 0;
 }
 
 /* Start btn */
@@ -99,10 +107,15 @@ button:hover {
 #note-text {
     display: none;
     margin: auto;
+    padding: 25px 10px;
     border-color: black;
-    width: 60%;
     color: black;
     background-color: antiquewhite;
+}
+
+#note-text h4 {
+    margin: 0;
+
 }
 
 /* Player Zone */
