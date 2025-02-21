@@ -27,77 +27,81 @@
     <section id="light-mode-container" class="text-right">
         <button onclick = "lightMode()">Light Mode</button>
     </section>
-    <section id="game-text-intro">
-        <div class="container">
-            <div id="game-name">
-                <h1 class="text-center">Just Break The Code</h1>
-            </div>
-            <div id="game-desc">
-                <p>Do you think you have what it takes to crack the code? Can you guess the secret number in the correct amount of guesses? Test your brain and your logical side by playing this Code Breaker game.</p>
-            </div>
-            <div id="game-rules">
-                <p>Players get 10 attempts to guess the correct 4 digit code. If the code is not cracked after 10 attempts, the game is over and the player loses. There is no time limit.</p>
-            </div>
-            <div class="text-center">
-                <h3 id="player-attempts-text"></h3>
-            </div>
-        </div>
-        <div class="text-center game_container">
-            <div id="secret-code-container">
-                <!-- <h2>Secret Code</h2> -->
-                <button type="button" id="random-code-btn">Start Game</button>
-                <h3 class="secret_code_number" id="code-slot-1"></h3>
-                <h3 class="secret_code_number" id="code-slot-2"></h3>
-                <h3 class="secret_code_number" id="code-slot-3"></h3>
-                <h3 class="secret_code_number" id="code-slot-4"></h3>
-            </div>
-            <div id="note-keypad-section">
-                <div id="read-note-container" class="half-page">
-                    <div id="note-text">
-                        <h4>Welcome to my little game. Do you think you can crack the code?</h4>
-                        <h5>
-                            <p>Here are a few hints about the code.</p>
-                            <li>The code is [4] digits long</li>
-                            <li>There are [x] even numbers and [x] odd numbers</li>
-                            <li>The code [does/does not] start with a leading zero</li>
-                        </h5>
-                    </div>
+    <section id="game-container">
+        <section id="game-text-intro">
+            <div class="intro-container">
+                <div id="game-name">
+                    <h1 class="text-center">Just Break The Code</h1>
                 </div>
-                <div id="player-code-container" class="half-page">
-                    <div id="player-guess-input">
-                        <div id="player-keypad">
-                            <div id="player-display-screen"></div>
-                            <!-- Keypad Set Up -->
-                            <button id="keypad-btn-1" data-value="1" class="keypad-num">1</button>
-                            <button id="keypad-btn-2" data-value="2" class="keypad-num">2</button>
-                            <button id="keypad-btn-3" data-value="3" class="keypad-num">3</button>
-                            <button id="keypad-btn-4" data-value="4" class="keypad-num">4</button>
-                            <button id="keypad-btn-5" data-value="5" class="keypad-num">5</button>
-                            <button id="keypad-btn-6" data-value="6" class="keypad-num">6</button>
-                            <button id="keypad-btn-7" data-value="7" class="keypad-num">7</button>
-                            <button id="keypad-btn-8" data-value="8" class="keypad-num">8</button>
-                            <button id="keypad-btn-9" data-value="9" class="keypad-num">9</button>
-                            <button id="keypad-btn-0" data-value="0" class="keypad-num">0</button>
-                            <button id="keypad-btn-clear">Clear</button>   
+                <div id="game-desc">
+                    <p>Do you think you have what it takes to crack the code? Can you guess the secret number in the correct amount of guesses? Test your brain and your logical side by playing this Code Breaker game.</p>
+                </div>
+                <div id="game-rules">
+                    <p>Players get 10 attempts to guess the correct 4 digit code. If the code is not cracked after 10 attempts, the game is over and the player loses. There is no time limit.</p>
+                </div>
+                <div class="text-center">
+                    <h3 id="player-attempts-text"></h3>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="text-center">
+                <div id="secret-code-container">
+                    <!-- <h2>Secret Code</h2> -->
+                    <button type="button" id="random-code-btn">Start Game</button>
+                    <h3 class="secret_code_number" id="code-slot-1"></h3>
+                    <h3 class="secret_code_number" id="code-slot-2"></h3>
+                    <h3 class="secret_code_number" id="code-slot-3"></h3>
+                    <h3 class="secret_code_number" id="code-slot-4"></h3>
+                </div>
+                <div id="note-keypad-section">
+                    <div id="read-note-container" class="half-page">
+                        <div id="note-text">
+                            <h4>Welcome to my little game. Do you think you can crack the code?</h4>
+                            <h5>
+                                <p>Here are a few hints about the code.</p>
+                                <li>The code is [4] digits long</li>
+                                <li>There are [x] even numbers and [x] odd numbers</li>
+                                <li>The code [does/does not] start with a leading zero</li>
+                            </h5>
                         </div>
                     </div>
-                    <button type="button" id="player-guess-btn">Submit Guess</button>
+                    <div id="player-code-container" class="half-page">
+                        <div id="player-guess-input">
+                            <div id="player-keypad">
+                                <div id="player-display-screen"></div>
+                                <!-- Keypad Set Up -->
+                                <button id="keypad-btn-1" data-value="1" class="keypad-num">1</button>
+                                <button id="keypad-btn-2" data-value="2" class="keypad-num">2</button>
+                                <button id="keypad-btn-3" data-value="3" class="keypad-num">3</button>
+                                <button id="keypad-btn-4" data-value="4" class="keypad-num">4</button>
+                                <button id="keypad-btn-5" data-value="5" class="keypad-num">5</button>
+                                <button id="keypad-btn-6" data-value="6" class="keypad-num">6</button>
+                                <button id="keypad-btn-7" data-value="7" class="keypad-num">7</button>
+                                <button id="keypad-btn-8" data-value="8" class="keypad-num">8</button>
+                                <button id="keypad-btn-9" data-value="9" class="keypad-num">9</button>
+                                <button id="keypad-btn-0" data-value="0" class="keypad-num">0</button>
+                                <button id="keypad-btn-clear">Clear</button>   
+                            </div>
+                        </div>
+                        <button type="button" id="player-guess-btn">Submit Guess</button>
+                    </div>
+                </div>
+                <div id="after-game">
+                    <button type="button" id="play-again-btn">Play Again</button>
                 </div>
             </div>
-            <div id="after-game">
-                <button type="button" id="play-again-btn">Play Again</button>
+            <div id="feedback-container">
+                <!-- <p id="player-guess-display">Player Submission:</p> -->
+                <h3 class="secret_code_number" id="official-secret-code"></h3>
             </div>
-        </div>
-        <div id="feedback-container">
-            <!-- <p id="player-guess-display">Player Submission:</p> -->
-            <h3 class="secret_code_number" id="official-secret-code"></h3>
-        </div>
-        <div class="text-center version_container">
-            <!-- Add version number to keep track of date last worked on -->
-            <!-- Unfinished versions == leading number 0 -->
-            <!-- The rest of the numbers is the date in YY.MM.DD format -->
-            <small>Ver. 0.25.02.20</small>
-        </div>
+            <div class="text-center version_container">
+                <!-- Add version number to keep track of date last worked on -->
+                <!-- Unfinished versions == leading number 0 -->
+                <!-- The rest of the numbers is the date in YY.MM.DD format -->
+                <small>Ver. 0.25.02.20</small>
+            </div>
+        </section>
     </section>
 </body>
 </html>
