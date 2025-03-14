@@ -63,19 +63,23 @@ button:hover {
 }
 
 /* Page Percentages */
-.two-thirds-page {
+.three-fourths-width {
+    width: 75%;
+}
+
+.two-thirds-width {
     width: 66%;
 }
 
-.half-page {
+.half-width {
     width: 50%;
 }
 
-.third-page {
+.one-third-width {
     width: 33%;
 }
 
-.quater-page {
+.one-quarter-width {
     width: 25%;
 }
 
@@ -107,7 +111,7 @@ button:hover {
 #note-text {
     display: none;
     margin: auto;
-    padding: 25px 10px;
+    padding: 15px 20px;
     border-color: black;
     color: black;
     background-color: antiquewhite;
