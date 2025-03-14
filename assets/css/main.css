@@ -33,6 +33,10 @@ p {
     font-size: 1em;
 }
 
+.text-left {
+    text-align: left;
+}
+
 .text-center {
     text-align: center;
 }
