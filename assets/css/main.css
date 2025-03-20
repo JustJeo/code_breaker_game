@@ -166,3 +166,8 @@ button:hover {
     display: none;
     margin: auto;
 }
+
+/* Version Container */
+#version-container small {
+    display: block;
+}
